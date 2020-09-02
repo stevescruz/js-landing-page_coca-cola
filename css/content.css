@@ -1,0 +1,66 @@
+.content {
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.content .textBox {
+  max-width: 600px;
+  position: relative;
+}
+
+.content .textBox h2 {
+  font-size: 4em;
+  font-weight: 900;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.content .textBox h2 span {
+  font-size: 2em;
+}
+
+.content .textBox p {
+  font-size: 1em;
+}
+
+.content .textBox a {
+  display: inline-block;
+
+  color: #111;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: var(--button-primary-color);
+  padding: 8px 20px;
+  border: 1px solid var(--button-primary-color);
+  border-radius: 40px;
+  outline: none;
+  margin-top: 20px;
+
+  cursor: pointer;
+  
+  transition: opacity .3s;
+}
+
+.content .imageBox {
+  width: 600px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  padding-right: 50px;
+  margin-top: 50px;
+}
+
+.content img {
+  max-width: 260px;
+}
