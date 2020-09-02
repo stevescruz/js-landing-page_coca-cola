@@ -1,0 +1,29 @@
+.thumbnails {
+  display: flex;
+
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  
+  transform: translateX(-50%);
+}
+
+.thumbnails li {
+  display: inline-block;
+
+  list-style: none;
+
+  margin: 0 20px;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.thumbnails a:hover li,
+.thumbnails a:focus li {
+  transform: translateY(-15px);
+}
+
+.thumbnails li img {
+  max-width: 40px;
+}
