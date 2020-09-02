@@ -1,0 +1,28 @@
+.sidebar {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMedia li {
+  list-style: none;
+}
+
+.socialMedia a {
+  display: inline-block;
+  
+  margin: 5px 0;
+}
+
+.socialMedia a:hover,
+.socialMedia a:focus {
+  opacity: .5;
+}
