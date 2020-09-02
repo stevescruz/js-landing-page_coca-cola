@@ -1,5 +1,7 @@
 :root {
   --bg-primary-color: #830C0F;
+  --bg-secondary-color: #525457;
+  --bg-tertiary-color: #1E1E1E;
   --font-primary-color: #fff;
   --button-primary-color: #fff;
 }

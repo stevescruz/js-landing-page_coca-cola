@@ -14,16 +14,15 @@
   list-style: none;
 
   margin: 0 20px;
-
-  cursor: pointer;
-  transition: 0.5s;
 }
 
-.thumbnails a:hover li,
-.thumbnails a:focus li {
+.thumbnails img:hover,
+.thumbnails img:focus {
   transform: translateY(-15px);
 }
 
 .thumbnails li img {
   max-width: 40px;
+
+  cursor: pointer;
 }
