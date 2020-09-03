@@ -55,8 +55,21 @@ function changeBackgroundColor(e) {
   }
 }
 
+function setPositionMarker(e) {
+  const marker = document.querySelector('.navbar #marker');
+  const elementOffsetWidth = e.target.offsetWidth;
+  const elementOffsetLeft = e.target.offsetLeft;
+
+  marker.style.width = elementOffsetWidth + 'px';
+  marker.style.left = elementOffsetLeft + 'px';
+
+  console.log(e.target.offsetLeft);
+  console.log(e.target.offsetWidth);
+}
+
 function addListeners() {
   const thumbnails = document.querySelectorAll('.thumbnails img');
+  const navLinks = document.querySelectorAll('.navbar a')
 
   for(let i = 0; i < thumbnails.length; i ++) {
     const thumbnail = thumbnails[i];
@@ -65,6 +78,11 @@ function addListeners() {
 
     thumbnail.addEventListener('keyup', imageSlider);
     thumbnail.addEventListener('keyup', changeBackgroundColor);
+  }
+
+  for(let i = 0; i < navLinks.length; i++) {
+    const navLink = navLinks[i];
+    navLink.addEventListener('focus', setPositionMarker);
   }
 }
 

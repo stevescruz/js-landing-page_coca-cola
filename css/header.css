@@ -20,8 +20,7 @@ header {
 
 .navbar ul {
   display: flex;
-
-  position:relative;
+  position: relative;
 }
 
 .navbar li {
@@ -32,6 +31,21 @@ header {
   display: inline-block;
 
   font-weight: 400;
+}
 
+.navbar li:not(:first-of-type) a {
   margin-left: 40px;
+}
+
+.navbar #marker {
+  width: 0;
+  height: 2px;
+
+  position: absolute;
+  bottom: -8px;
+
+  background-color: var(--font-primary-color);
+  border-radius: 4px;
+
+  transition: 0.5s;
 }
