@@ -10,7 +10,6 @@
 
 body {
   color: var(--font-primary-color);
-  background-color: var(--bg-primary-color);
 }
 
 a {

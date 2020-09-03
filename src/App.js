@@ -45,7 +45,10 @@ function changeBackgroundColor(e) {
   }
 
   const thumbnailImageName = e.target.getAttribute('src');
-  document.body.style.backgroundColor = backgroundColors[thumbnailImageName];
+
+  const pageWrapper = document.querySelector('.wrapper');
+
+  pageWrapper.style.backgroundColor = backgroundColors[thumbnailImageName];
 
   if(e.type === 'click') {
     e.target.blur();
