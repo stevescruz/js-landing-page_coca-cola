@@ -63,4 +63,6 @@
 
 .content img {
   max-width: 260px;
+
+  transition: 0.5s;
 }

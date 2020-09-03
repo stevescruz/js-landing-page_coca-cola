@@ -24,5 +24,7 @@
 .thumbnails li img {
   max-width: 40px;
 
+  transition: 0.5s;
+
   cursor: pointer;
 }
