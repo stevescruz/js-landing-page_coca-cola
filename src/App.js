@@ -1,23 +1,22 @@
-function isKeyValid(key) {
-  const validKeys = new Set;
-  validKeys.add('Enter');
-
-  return validKeys.has(key);
+//Constants Config
+const imageAlt = {
+  'assets/coke001.png': 'Classic Coca-Cola can',
+  'assets/coke002.png': 'Diet Coca-Cola can',
+  'assets/coke003.png': 'Coca-Cola Zero can',
 }
+
+const backgroundColors = {
+  'assets/coke001.png': 'var(--bg-primary-color)',
+  'assets/coke002.png': 'var(--bg-secondary-color)',
+  'assets/coke003.png': 'var(--bg-tertiary-color)',
+}
+
+//Mains Functions
 
 function imageSlider(e) {
 
-  console.log(e);
-  console.log(typeof(e));
-
   if(!isKeyValid(e.code) && e.type !== 'click') {
     return false;
-  }
-
-  const imageAlt = {
-    'assets/coke001.png': 'Classic Coca-Cola can',
-    'assets/coke002.png': 'Diet Coca-Cola can',
-    'assets/coke003.png': 'Coca-Cola Zero can',
   }
 
   const thumbnailImageName = e.target.getAttribute('src');
@@ -38,12 +37,6 @@ function changeBackgroundColor(e) {
     return false;
   }
 
-  const backgroundColors = {
-    'assets/coke001.png': 'var(--bg-primary-color)',
-    'assets/coke002.png': 'var(--bg-secondary-color)',
-    'assets/coke003.png': 'var(--bg-tertiary-color)',
-  }
-
   const thumbnailImageName = e.target.getAttribute('src');
 
   const pageWrapper = document.querySelector('.wrapper');
@@ -62,12 +55,18 @@ function setPositionMarker(e) {
 
   marker.style.width = elementOffsetWidth + 'px';
   marker.style.left = elementOffsetLeft + 'px';
-
-  console.log(e.target.offsetLeft);
-  console.log(e.target.offsetWidth);
 }
 
-function addListeners() {
+//Helpers
+
+function isKeyValid(key) {
+  const validKeys = new Set;
+  validKeys.add('Enter');
+
+  return validKeys.has(key);
+}
+
+function addEventListeners() {
   const thumbnails = document.querySelectorAll('.thumbnails img');
   const navLinks = document.querySelectorAll('.navbar a')
 
@@ -86,4 +85,6 @@ function addListeners() {
   }
 }
 
-addListeners();
+//Initialize App
+
+addEventListeners();
