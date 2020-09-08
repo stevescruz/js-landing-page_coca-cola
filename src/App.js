@@ -11,11 +11,14 @@ const backgroundColors = {
   'assets/coke003.png': 'var(--bg-tertiary-color)',
 }
 
+const validKeys = new Set;
+validKeys.add('Enter');
+validKeys.add('Space');
+
 //Mains Functions
 
 function imageSlider(e) {
-
-  if(!isKeyValid(e.code) && e.type !== 'click') {
+  if(e.type !== 'click' && !isKeyValid(e.code)) {
     return false;
   }
 
@@ -29,11 +32,11 @@ function imageSlider(e) {
 
   if(e.type === 'click') {
     e.target.blur();
-  }
+  } 
 }
 
 function changeBackgroundColor(e) {
-  if(!isKeyValid(e.code) && e.type !== 'click') { 
+  if(e.type !== 'click' && isKeyValid(e.code)) {
     return false;
   }
 
@@ -48,7 +51,7 @@ function changeBackgroundColor(e) {
   }
 }
 
-function setPositionMarker(e) {
+function setPositionNavMarker(e) {
   const marker = document.querySelector('.navbar #marker');
   const elementOffsetWidth = e.target.offsetWidth;
   const elementOffsetLeft = e.target.offsetLeft;
@@ -60,10 +63,23 @@ function setPositionMarker(e) {
 //Helpers
 
 function isKeyValid(key) {
-  const validKeys = new Set;
-  validKeys.add('Enter');
-
   return validKeys.has(key);
+}
+
+function preventDefaultBehavior(event, key) {
+  const nodeName = event.target.nodeName;
+  
+  if(nodeName === "A" && key === "Space") {
+    event.preventDefault();
+  }
+  else if(nodeName !== "BUTTON" && key === "Space") {
+    event.preventDefault();
+  }
+  else if(nodeName !== "BUTTON" && key === "Enter") {
+    event.preventDefault();
+  }
+
+  return;
 }
 
 function addEventListeners() {
@@ -75,13 +91,19 @@ function addEventListeners() {
     thumbnail.addEventListener('click', imageSlider);
     thumbnail.addEventListener('click', changeBackgroundColor);
 
-    thumbnail.addEventListener('keyup', imageSlider);
-    thumbnail.addEventListener('keyup', changeBackgroundColor);
+    thumbnail.addEventListener('keydown', (event) => {
+      preventDefaultBehavior(event, event.code);
+      imageSlider(event);
+    });
+    thumbnail.addEventListener('keydown', (event) => {
+      preventDefaultBehavior(event, event.code);
+      changeBackgroundColor(event);
+    });
   }
 
   for(let i = 0; i < navLinks.length; i++) {
     const navLink = navLinks[i];
-    navLink.addEventListener('focus', setPositionMarker);
+    navLink.addEventListener('focus', setPositionNavMarker);
   }
 }
 
