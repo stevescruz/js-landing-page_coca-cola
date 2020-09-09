@@ -125,11 +125,11 @@
   }
 }
 
-/* @media(max-width: 467px) {
+@media(max-width: 467px) {
   .textBox h2 {
     font-size: 2em;
   }
-} */
+}
 
 @media(max-width: 391px) {
   .textBox h2 {
@@ -137,7 +137,7 @@
   }
 }
 
-/* @media(max-width: 335px) {
+@media(max-width: 335px) {
   .textBox {
     overflow: hidden;
   }
@@ -145,7 +145,7 @@
   .textBox h2 {
     font-size: 1.2em;
   }
-} */
+}
 
 @media(max-height: 740px) {
   .content {
