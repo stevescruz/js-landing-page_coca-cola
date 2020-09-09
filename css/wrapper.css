@@ -13,3 +13,9 @@
   
   transition: 0.5s
 }
+
+@media(max-width: 991px) {
+  .wrapper {
+    padding: 40px;
+  }
+}
