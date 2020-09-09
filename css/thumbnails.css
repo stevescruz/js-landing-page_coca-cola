@@ -28,3 +28,15 @@
 
   cursor: pointer;
 }
+
+@media(max-width: 991px) {
+  .thumbnails li img {
+    max-width: 30px;
+  }
+}
+
+@media(max-height: 740px) {
+  .thumbnails li img {
+    max-width: 30px;
+  }
+}
