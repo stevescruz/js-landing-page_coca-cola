@@ -26,3 +26,12 @@
 .socialMedia a:focus {
   opacity: .5;
 }
+
+@media(max-width: 991px) {
+  .sidebar {
+    width: 50px;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.2)
+  }
+}
