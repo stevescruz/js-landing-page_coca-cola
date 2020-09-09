@@ -8,27 +8,27 @@
   position: relative;
 }
 
-.content .textBox {
+.textBox {
   max-width: 600px;
   position: relative;
 }
 
-.content .textBox h2 {
+.textBox h2 {
   font-size: 4em;
   font-weight: 900;
   line-height: 1.5em;
   text-transform: uppercase;
 }
 
-.content .textBox h2 span {
+.textBox h2 span {
   font-size: 2em;
 }
 
-.content .textBox p {
+.textBox p {
   font-size: 1em;
 }
 
-.content .textBox a {
+.textBox a {
   display: inline-block;
 
   color: #111;
@@ -51,8 +51,8 @@
   transition: opacity .3s;
 }
 
-.content .imageBox {
-  width: 600px;
+.imageBox {
+  max-width: 600px;
 
   display: flex;
   justify-content: flex-end;
@@ -61,8 +61,106 @@
   margin-top: 50px;
 }
 
-.content img {
+.imageBox img {
   max-width: 260px;
 
   transition: 0.5s;
+}
+
+@media(max-width: 1170px) {
+  .imageBox {
+    max-width: 600px;
+  
+    display: flex;
+    justify-content: flex-end;
+  
+    padding-right: 35px;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+
+  .imageBox img {
+    max-width: 160px;
+  }
+}
+
+
+@media(max-width: 991px) {
+  .content {
+    flex-direction: column;
+    margin-top: 80px;
+    padding-bottom: 70px;
+  }
+
+  .textBox {
+    max-width: 100%;
+    padding-right: 20px;
+  }
+
+  .textBox h2 {
+    font-size: 3em;
+  }
+  
+  .textBox a {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .imageBox {
+    width: 100%;
+
+    justify-content: center;
+
+    padding-right: 0;
+  }
+
+  .imageBox img {
+    max-width: 150px;
+  }
+}
+
+@media(max-width: 545px) {
+  .textBox h2 {
+    font-size: 2.5em;
+  }
+}
+
+/* @media(max-width: 467px) {
+  .textBox h2 {
+    font-size: 2em;
+  }
+} */
+
+@media(max-width: 391px) {
+  .textBox h2 {
+    font-size: 1.8em;
+  }
+}
+
+/* @media(max-width: 335px) {
+  .textBox {
+    overflow: hidden;
+  }
+
+  .textBox h2 {
+    font-size: 1.2em;
+  }
+} */
+
+@media(max-height: 740px) {
+  .content {
+    margin-top: 40px;
+  }
+
+  .textBox p {
+    font-size: 0.8em;
+  }
+
+  .imageBox {
+    margin-top: 20px;
+  }
+
+  .imageBox img {
+    max-width: 120px;
+  }
 }
