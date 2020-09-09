@@ -1,4 +1,4 @@
-header {
+.header {
   width: 100%;
 
   display: flex;
@@ -16,6 +16,11 @@ header {
   max-width: 175px;
 
   position:relative;
+}
+
+.hamburguer-menu {
+  display: none;
+  opacity: 0;
 }
 
 .navbar ul {
@@ -48,4 +53,91 @@ header {
   border-radius: 4px;
 
   transition: 0.5s;
+}
+
+@media(max-width: 991px) {
+  .header {
+    padding: 20px 40px;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  
+    background-color: var(--bg-menu-color);
+
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    transition: 0.2s;
+  }
+
+  .navbar a {
+    color: var(--font-secondary-color);
+    font-size: 2em;
+  
+    margin: 10px 0;
+  }
+
+  .navbar a:hover {
+    color: var(--font-tertiary-color);
+    opacity: 1;
+  }
+  .navbar li:not(:first-of-type) a {
+    margin-left: 0px;
+  }
+
+  .toggleMenu {
+    width: 40px;
+    height: 40px;
+
+    z-index: 2;
+
+    background: url(../assets/menu.svg);
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+  }
+
+  .toggleMenu:focus,
+  .toggleMenu:hover {
+    opacity: .5;
+  }
+
+  .toggleMenu.active {
+    background: url(../assets/x.svg);
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    filter: invert(1);
+  }
+
+  .navbar.active {
+    visibility: visible;
+    opacity: 1;
+  }
 }

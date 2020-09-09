@@ -60,6 +60,20 @@ function setPositionNavMarker(e) {
   marker.style.left = elementOffsetLeft + 'px';
 }
 
+function toggleMenu(e) {
+  if(e.type !== 'click' && !isKeyValid(e.code)) {
+    return false;
+  }
+
+  const hamburguerMenu = document.querySelector('.toggleMenu');
+  const navigation = document.querySelector('.navbar')
+
+  hamburguerMenu.classList.toggle('active');
+  navigation.classList.toggle('active');
+  
+  e.target.blur();
+}
+
 //Helpers
 
 function isKeyValid(key) {
@@ -83,8 +97,20 @@ function preventDefaultBehavior(event, key) {
 }
 
 function addEventListeners() {
-  const thumbnails = document.querySelectorAll('.thumbnails img');
+  const hamburguerMenu = document.querySelector('.toggleMenu');
   const navLinks = document.querySelectorAll('.navbar a')
+  const thumbnails = document.querySelectorAll('.thumbnails img');
+
+  hamburguerMenu.addEventListener('click', toggleMenu);
+  hamburguerMenu.addEventListener('keydown', (event) => {
+    preventDefaultBehavior(event, event.code);
+    toggleMenu(event);
+  });
+
+  for(let i = 0; i < navLinks.length; i++) {
+    const navLink = navLinks[i];
+    navLink.addEventListener('focus', setPositionNavMarker);
+  }
 
   for(let i = 0; i < thumbnails.length; i ++) {
     const thumbnail = thumbnails[i];
@@ -99,11 +125,6 @@ function addEventListeners() {
       preventDefaultBehavior(event, event.code);
       changeBackgroundColor(event);
     });
-  }
-
-  for(let i = 0; i < navLinks.length; i++) {
-    const navLink = navLinks[i];
-    navLink.addEventListener('focus', setPositionNavMarker);
   }
 }
 
