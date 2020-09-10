@@ -18,7 +18,7 @@
   position:relative;
 }
 
-.hamburguerMenu {
+.hamburgerMenu {
   visibility: hidden;
   opacity: 0;
 }
@@ -109,7 +109,7 @@
   .toggleMenu {
     visibility: visible;
     opacity: 1;
-    
+
     width: 40px;
     height: 40px;
 

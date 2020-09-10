@@ -65,10 +65,10 @@ function toggleMenu(e) {
     return false;
   }
 
-  const hamburguerMenu = document.querySelector('.toggleMenu');
+  const hamburgerMenu = document.querySelector('.toggleMenu');
   const navigation = document.querySelector('.navbar')
 
-  hamburguerMenu.classList.toggle('active');
+  hamburgerMenu.classList.toggle('active');
   navigation.classList.toggle('active');
   
   e.target.blur();
@@ -97,12 +97,12 @@ function preventDefaultBehavior(event, key) {
 }
 
 function addEventListeners() {
-  const hamburguerMenu = document.querySelector('.toggleMenu');
+  const hamburgerMenu = document.querySelector('.toggleMenu');
   const navLinks = document.querySelectorAll('.navbar a')
   const thumbnails = document.querySelectorAll('.thumbnails img');
 
-  hamburguerMenu.addEventListener('click', toggleMenu);
-  hamburguerMenu.addEventListener('keydown', (event) => {
+  hamburgerMenu.addEventListener('click', toggleMenu);
+  hamburgerMenu.addEventListener('keydown', (event) => {
     preventDefaultBehavior(event, event.code);
     toggleMenu(event);
   });
