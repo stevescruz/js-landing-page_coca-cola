@@ -58,6 +58,10 @@ function setPositionNavMarker(e) {
 
   marker.style.width = elementOffsetWidth + 'px';
   marker.style.left = elementOffsetLeft + 'px';
+
+  if(e.type === 'mouseenter') {
+    document.activeElement.blur();
+  }
 }
 
 function toggleMenu(e) {
@@ -72,7 +76,6 @@ function toggleMenu(e) {
   navigation.classList.toggle('active');
 
   toggleAnchorMenuEvent();
-
   e.target.blur();
 }
 
@@ -151,6 +154,7 @@ function addEventListeners() {
   for(let i = 0; i < navLinks.length; i++) {
     const navLink = navLinks[i];
     navLink.addEventListener('focus', setPositionNavMarker);
+    navLink.addEventListener('mouseenter', setPositionNavMarker);
   }
 
   for(let i = 0; i < thumbnails.length; i ++) {
