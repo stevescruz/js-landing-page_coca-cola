@@ -36,7 +36,7 @@ function imageSlider(e) {
 }
 
 function changeBackgroundColor(e) {
-  if(e.type !== 'click' && isKeyValid(e.code)) {
+  if(e.type !== 'click' && !isKeyValid(e.code)) {
     return false;
   }
 
