@@ -70,11 +70,52 @@ function toggleMenu(e) {
 
   hamburgerMenu.classList.toggle('active');
   navigation.classList.toggle('active');
-  
+
+  toggleAnchorMenuEvent();
+
   e.target.blur();
 }
 
 //Helpers
+
+// NOTE: toggleAnchorMenuEvent() is a hack to make my hamburger menu and slider
+// menu work together in GitHub pages.
+// 
+// 1 - To properly work, my slider menu requires the page to not reload (href="#")
+// The anchors in my hamburger menu reload the page to exit it (href="/")
+// 2 - In GitHub Pages anchors with href="/" don't work as it redirects you
+// to [username].github.io instead of [user_name].github.io/[repo_name].
+// 
+// If you are not using GitHub Pages AND not using the slider menu in conjunction
+// with the hamburger menu remove toggleAnchorMenuEvent().
+
+function toggleAnchorMenuEvent() {
+  const hamburgerMenu = document.querySelector('.toggleMenu');
+  const navLinks = document.querySelectorAll('.navbar a')
+
+  const isMenuToggled = hamburgerMenu.classList.contains('toggleMenu');
+
+  for(let i = 0; i < navLinks.length; i++) {
+    const navLink = navLinks[i];
+
+    if(isMenuToggled) {
+      navLink.addEventListener('click', toggleMenu);
+      navLink.addEventListener('keydown', (event) => {
+        preventDefaultBehavior(event, event.code);
+        toggleMenu(event);
+      });
+    } 
+    else {
+      navLink.removeEventListener('click', toggleMenu);
+      navLink.removeEventListener('keydown', (event) => {
+        preventDefaultBehavior(event, event.code);
+        toggleMenu(event);
+      });
+    }
+  }
+
+  return;
+}
 
 function isKeyValid(key) {
   return validKeys.has(key);
