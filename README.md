@@ -47,7 +47,7 @@ This project was developed with the following technologies:
 1. Looking at this code you can learn how to change the background color and a displayed image by clicking on an HTML element (or by pressing space/enter on your keyboard).
    - CodePen example: [Thumbnails with DIVs](https://codepen.io/stevescruz/pen/xxVWLjr).
    
-2. You can also learn how to create a hamburger menu for mobile devices that when on click (or on space/enter key down) reveals the navigation links.
+2. You can also learn how to create a hamburger menu for mobile devices that on click (or on key down with space/enter) reveals the navigation links.
    - CodePen example: [Hamburger Menu](https://codepen.io/stevescruz/pen/yLOKzvo).
 3. Creative use of JavaScript to create an animated sliding marker that moves under the navigation links according to the one you hover or focus on.
    - CodePen example: [Sliding Marker for Navigation Links](https://codepen.io/stevescruz/pen/KKzoqoG).
