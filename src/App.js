@@ -74,6 +74,12 @@ function toggleMenu(e) {
 
   hamburgerMenu.classList.toggle('active');
   navigation.classList.toggle('active');
+  
+  hamburgerMenu.classList.add('rotate');
+
+  setTimeout(() => {
+    hamburgerMenu.classList.remove('rotate');
+  }, 1000)
 
   toggleAnchorMenuEvent();
   e.target.blur();
