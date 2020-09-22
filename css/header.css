@@ -142,7 +142,7 @@
 
   .rotate {
     transform: rotateX(360deg);
-    transition: all 1s linear;
+    transition: transform 0.5s linear;
   }
 
   .navbar.active {
